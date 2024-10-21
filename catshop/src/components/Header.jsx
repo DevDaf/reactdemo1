@@ -1,5 +1,13 @@
+import { HeaderMenuItem } from "./HeaderMenuItem"
+import { useState } from "react"
+
 function Header() {
   
+
+    const [activePage, setActivePage] = useState("Home")
+
+
+
     return (
       <>
  <header className="siteheader">
@@ -9,11 +17,11 @@ function Header() {
         </div>
         <nav>
             <ul className="navmenu">
-                <li><a className="headeranchor" href="#home">Home</a></li>
-                <li><a className="headeranchor" href="#">Services</a></li>
-                <li><a className="headeranchor" href="#products">Products</a></li>
-                <li><a className="headeranchor" href="#about">About</a></li>
-                <li><a className="headeranchor" href="#contact">Contact</a></li>
+                <HeaderMenuItem text="Home" age="12"activePage={activePage} onSetActivePage={setActivePage}></HeaderMenuItem>
+                <HeaderMenuItem text="Services" age="14"activePage={activePage}onSetActivePage={setActivePage}></HeaderMenuItem>
+                <HeaderMenuItem text="Products" age="13"activePage={activePage}onSetActivePage={setActivePage}></HeaderMenuItem>
+                <HeaderMenuItem text="About" age="15"activePage={activePage}onSetActivePage={setActivePage}></HeaderMenuItem>
+                <HeaderMenuItem text="Contact" age="16"activePage={activePage}onSetActivePage={setActivePage}></HeaderMenuItem>
             </ul>
         </nav>
         <ul className="navicons">

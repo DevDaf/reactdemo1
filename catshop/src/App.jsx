@@ -5,12 +5,15 @@ import Main from './components/Main'
 import Footer from './components/Footer'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [activePage, setActivePage] = useState("Home")
+  const onItemClicked = (newPage) => {
+    setActivePage(newPage)
+  }
 
   return (
     <>
-    <Header></Header>
-    <Main></Main>
+    <Header activePage={activePage} onItemClicked={onItemClicked}></Header>
+    <Main activePage={activePage}></Main>
     <Footer></Footer>
     </>
   )
