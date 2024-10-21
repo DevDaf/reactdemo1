@@ -1,6 +1,6 @@
 import React from 'react'
 
-exoport const Home = () => {
+export const Home = () => {
     return(
     <div>Home Page</div>
     )

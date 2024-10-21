@@ -1,12 +1,13 @@
 import { HeaderMenuItem } from "./HeaderMenuItem"
-import { useState } from "react"
 
-function Header() {
+
+function Header(props) {
   
 
-    const [activePage, setActivePage] = useState("Home")
 
-
+    const onItemClicked = (newPage) =>{
+        props.onItemClicked(newPage)
+    }
 
     return (
       <>
@@ -17,11 +18,11 @@ function Header() {
         </div>
         <nav>
             <ul className="navmenu">
-                <HeaderMenuItem text="Home" age="12"activePage={activePage} onSetActivePage={setActivePage}></HeaderMenuItem>
-                <HeaderMenuItem text="Services" age="14"activePage={activePage}onSetActivePage={setActivePage}></HeaderMenuItem>
-                <HeaderMenuItem text="Products" age="13"activePage={activePage}onSetActivePage={setActivePage}></HeaderMenuItem>
-                <HeaderMenuItem text="About" age="15"activePage={activePage}onSetActivePage={setActivePage}></HeaderMenuItem>
-                <HeaderMenuItem text="Contact" age="16"activePage={activePage}onSetActivePage={setActivePage}></HeaderMenuItem>
+                <HeaderMenuItem text="Home" onPageMenuClick={onItemClicked}activePage={props.activePage}></HeaderMenuItem>
+                <HeaderMenuItem text="About" onPageMenuClick={onItemClicked}activePage={props.activePage}></HeaderMenuItem>
+                <HeaderMenuItem text="Services" onPageMenuClick={onItemClicked}activePage={props.activePage}></HeaderMenuItem>
+                <HeaderMenuItem text="Contact" onPageMenuClick={onItemClicked}activePage={props.activePage}></HeaderMenuItem>
+                <HeaderMenuItem text="Products" onPageMenuClick={onItemClicked}activePage={props.activePage}></HeaderMenuItem>
             </ul>
         </nav>
         <ul className="navicons">

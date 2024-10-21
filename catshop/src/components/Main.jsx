@@ -1,9 +1,8 @@
 
 import {Home} from "./Home"
-import {Products} from "./Products"
-import {Services} from "./Services"
-import {About} from "./About"
-import {Contact} from "./Contact"
+import { Products } from "./Products"
+
+
 
 
 
@@ -12,10 +11,7 @@ function Main(props) {
     return (
       <>
       { props.activePage == 'Home' && <Home></Home>}
-      { props.activePage == 'Services' && <Services></Services>}
-      { props.activePage == 'Products' && <Products></Products>}
-      { props.activePage == 'About' && <Contact></Contact>}
-      { props.activePage == 'Contact' && <About></About>}
+      { props.activePage == 'Services' && <Products></Products>}
     </>
     )
   }
